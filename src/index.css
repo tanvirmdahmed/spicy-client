@@ -12,3 +12,11 @@
 h1{
     @apply text-5xl font-bold;
 }
+
+/* ChefDetails */
+.bg-image{
+    background-image: url("https://i.ibb.co/Qb7RKvG/banner.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: auto;
+}
