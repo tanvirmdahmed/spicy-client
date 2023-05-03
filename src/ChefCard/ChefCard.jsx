@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 const ChefCard = ({ chefData }) => {
@@ -7,13 +8,14 @@ const ChefCard = ({ chefData }) => {
         <div className='mx-auto'>
 
             <div className="w[90%] bg-image border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-
-                <img className="rounded-t-lg" src={chefPicture} alt="" />
+                <LazyLoad offset={100}>
+                    <img className="rounded-t-lg" src={chefPicture} alt="" />
+                </LazyLoad>
 
                 <div className="p-5">
-                    
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-purple-500 dark:text-white">{chefName}</h5>
-                    
+
+                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-purple-500 dark:text-white">{chefName}</h5>
+
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400"><strong>Years of Experiences: </strong>{yearsExperience} years</p>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400"><strong>Number of Recipes: </strong>{numRecipes} items</p>
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400"><strong>Likes: </strong>{likes} peoples</p>
