@@ -6,11 +6,13 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import ChefDetails from "../ChefDetails/ChefDetails";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import Error404 from "../Error404/Error404";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <Main></Main>,
+      errorElement: <Error404></Error404>,
       children: [
         {
           path: "/",
