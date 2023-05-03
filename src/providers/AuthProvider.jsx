@@ -13,27 +13,14 @@ const AuthProvider = ({ children }) => {
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
 
-    const handleGoogleSignIn = () => {
-
-        signInWithPopup(auth, googleProvider)
-            .then(result => {
-                const loggedInUser = result.user;
-                console.log(loggedInUser);
-                setUser(loggedInUser);
-            })
-            .catch(error => {
-            })
+    const googleSignIn = () => {
+        setLoading(true);
+        return signInWithPopup(auth, googleProvider);
     }
 
-    const handleGithubSignIn = () => {
-        signInWithPopup(auth, githubProvider)
-        .then( result => {
-            const loggedUser = result.user;
-            console.log(loggedUser);
-            setUser(loggedUser);
-        })
-        .catch(error => {
-        })
+    const githubSignIn = () => {
+        setUser(true);
+        return signInWithPopup(auth, githubProvider);
     }
 
     const createUser = (email, password) => {
@@ -65,11 +52,11 @@ const AuthProvider = ({ children }) => {
 
     const profileUpdate = (user, name, url) => {
         updateProfile(user, {
-            displayName: name, 
+            displayName: name,
             photoURL: url
         })
             .then(() => {
-               console.log('User Updated');
+                console.log('User Updated');
             })
             .catch((error) => {
                 console.log(error.message);
@@ -79,12 +66,13 @@ const AuthProvider = ({ children }) => {
     const authInfo = {
         user,
         loading,
+        setLoading,
         createUser,
         signIn,
         logOut,
         profileUpdate,
-        handleGoogleSignIn,
-        handleGithubSignIn
+        googleSignIn,
+        githubSignIn
     }
 
     return (

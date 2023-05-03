@@ -6,11 +6,11 @@ import { AuthContext } from '../providers/AuthProvider';
 const Login = () => {
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
-    const { signIn, handleGoogleSignIn, handleGithubSignIn } = useContext(AuthContext);
-    // const navigate = useNavigate();
-    // const location = useLocation();
-    // console.log('login page location', location)
-    // const from = location.state?.from?.pathname || '/'
+    const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log('login page location', location)
+    const from = location.state?.from?.pathname || '/'
 
     const handleLogin = event => {
         setSuccess('');
@@ -27,13 +27,37 @@ const Login = () => {
                 console.log(loggedUser);
                 setSuccess("You have successfully logged in")
                 form.reset();
-                // navigate(from, { replace: true })
+                navigate(from, { replace: true })
             })
             .catch(error => {
                 console.log(error);
                 setError(error.message)
             })
     }
+
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+            })
+    };
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });
+            })
+            .catch(error => {
+            })
+    }
+
 
     return (
         <div className="hero bg-slate-100 my-12">

@@ -1,12 +1,13 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../providers/AuthProvider';
 
 const Register = () => {
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
-    const { createUser, profileUpdate, handleGoogleSignIn, handleGithubSignIn } = useContext(AuthContext);
+    const { createUser, profileUpdate, googleSignIn, githubSignIn, loading } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegister = event => {
         setSuccess('');
@@ -37,10 +38,33 @@ const Register = () => {
                 console.log(createdUser);
                 setSuccess('You have successfully registered')
                 form.reset();
+                navigate('/')
             })
             .catch(error => {
                 console.log(error);
                 setError(error.message)
+            })
+    }
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate('/')
+            })
+            .catch(error => {
+            })
+    };
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate('/')
+            })
+            .catch(error => {
             })
     }
 
