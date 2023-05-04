@@ -2,8 +2,7 @@ import React from 'react';
 
 const Sliders = () => {
     return (
-        <div>
-
+        <div className='my-12'>
             <div className="carousel w-full">
                 <div id="item1" className="carousel-item rounded-lg w-full bg-sliders1 items-end">
                     <h2 className='text-sky-300 drop-shadow-xl text-5xl text-center font-bold italic uppercase pb-12 ps-8'>"Eat a lot today and again tomorrow"</h2>
@@ -17,7 +16,6 @@ const Sliders = () => {
                 <div id="item4" className="carousel-item rounded-lg w-full bg-sliders4 justify-end items-start">
                     <h2 className='text-amber-300 drop-shadow-xl text-5xl text-center font-bold italic uppercase pr-8 pt-8'>"A taste you’ll remember"</h2>
                 </div>
-                
             </div>
             <div className="flex justify-center w-full py-2 gap-2">
                 <a href="#item1" className="btn btn-xs">1</a>
