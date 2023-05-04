@@ -50,7 +50,6 @@ const Register = () => {
         googleSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 navigate('/')
             })
             .catch(error => {
