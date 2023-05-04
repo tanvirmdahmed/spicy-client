@@ -8,7 +8,7 @@ const ChefCard = ({ chefData }) => {
         <div className='mx-auto'>
 
             <div className="w[90%] bg-image border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                <LazyLoad offset={100}>
+                <LazyLoad offset={100} threshold={0.95}>
                     <img className="rounded-t-lg" src={chefPicture} alt="" />
                 </LazyLoad>
 

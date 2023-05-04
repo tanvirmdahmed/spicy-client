@@ -17,13 +17,13 @@ const Header = () => {
 
     return (
         <div>
-            <div className="navbar bg-image py-4">
+            <div className="navbar flex-col md:lg:flex-row bg-image py-4 gap-4 md:lg:gap-0">
                 <div className="flex-1 gap-2">
                     <h1 className='text-[#1B98F5]'><TbChefHat></TbChefHat></h1>
                     <h1 className='text-[#1B98F5]'>Spicy</h1>
                 </div>
-                <div className="flex-none">
-                    <div className="menu menu-horizontal px-1 text-xl gap-10 items-center text-orange-400">
+                <div className="">
+                    <div className="menu flex-col md:lg:flex-row menu-horizontal px-1 text-xl gap-2 md:lg:gap-10 items-center text-orange-400">
                         <ActiveLink to='/'>Home</ActiveLink>
                         <ActiveLink to='/blog'>Blog</ActiveLink>
                         {

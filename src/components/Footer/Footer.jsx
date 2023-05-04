@@ -3,12 +3,12 @@ import { FaTwitter, FaYoutube, FaFacebook } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="footer footer-center p-10 bg-image text-base-content rounded-lg">
+        <footer className="footer footer-center p-10 bg-image rounded-lg">
             <div className="grid grid-flow-col gap-4 text-lg">
-                <a className="link link-hover">About us</a>
-                <a className="link link-hover">Contact</a>
-                <a className="link link-hover">Catering</a>
-                <a className="link link-hover">Menu</a>
+                <a className="link link-hover text-sm md:lg:text-lg">About us</a>
+                <a className="link link-hover text-sm md:lg:text-lg">Contact</a>
+                <a className="link link-hover text-sm md:lg:text-lg">Catering</a>
+                <a className="link link-hover text-sm md:lg:text-lg">Menu</a>
             </div>
             <div>
                 <div className="grid grid-flow-col gap-4">
@@ -18,7 +18,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p className='text-lg'>Copyright © 2023 - All right reserved by Spicy Ltd</p>
+                <p className='text-sm md:lg:text-lg'>Copyright © 2023 - All right reserved by Spicy Ltd</p>
             </div>
         </footer>
     );

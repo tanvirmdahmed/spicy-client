@@ -73,7 +73,7 @@ const Register = () => {
         <div className="hero bg-image rounded-lg my-12">
             <div className="hero-content flex-col w-full my-10">
                 <div className="text-center">
-                    <h1 className="text-5xl font-bold">Please Register!!!</h1>
+                    <h1 className="text-3xl md:lg:text-5xl font-bold">Please Register!!!</h1>
                 </div>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <div className='px-8 mt-8'>
@@ -81,7 +81,7 @@ const Register = () => {
                         <button onClick={handleGithubSignIn} className="btn btn-outline btn-secondary w-full mb-8 gap-2"><FaGithub></FaGithub> Register with GitHub</button>
                     </div>
                 </div>
-                <h2 className='text-center text-2xl font-semibold'>or</h2>
+                <h2 className='text-center text-2xl font-semibold'>---------- or ----------</h2>
                 <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleRegister} className="card-body">
                         <div className="form-control">

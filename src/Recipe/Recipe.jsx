@@ -18,7 +18,7 @@ const Recipe = ({ recipe }) => {
     return (
         <div className="card w-[90%]w[90%] bg-image border border-gray-200 rounded-lg shadow-xl">
             <div className="card-body">
-                <h2 className="text-4xl text-lime-800 font-bold">{recipeName}</h2>
+                <h2 className="text-3xl md:lg:text-4xl text-lime-800 font-bold">{recipeName}</h2>
                 <h4 className='text-xl font-bold text-slate-800'>Ingredients</h4>
                 <ol>
                     {
