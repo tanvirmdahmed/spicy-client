@@ -31,6 +31,7 @@ const Recipe = ({ recipe }) => {
                         emptySymbol={<FaRegStar></FaRegStar>}
                         placeholderSymbol={<FaStar></FaStar>}
                         fullSymbol={<FaStar></FaStar>}
+                        readonly={true}
                     >
                     </Rating>
                     <span className='mb-1 font-bold text-gray-500'>{rating}</span>
