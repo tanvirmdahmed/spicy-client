@@ -70,7 +70,7 @@ const Register = () => {
 
 
     return (
-        <div className="hero bg-slate-200 rounded-lg my-12">
+        <div className="hero bg-image rounded-lg my-12">
             <div className="hero-content flex-col w-full my-10">
                 <div className="text-center">
                     <h1 className="text-5xl font-bold">Please Register!!!</h1>

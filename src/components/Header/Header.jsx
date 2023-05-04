@@ -18,9 +18,9 @@ const Header = () => {
     return (
         <div>
             <div className="navbar bg-image py-4">
-                <div className="flex-1">
-                    <h1 className='text-amber-300'><TbChefHat></TbChefHat></h1>
-                    <h1 className='text-amber-300'> Chef Master</h1>
+                <div className="flex-1 gap-2">
+                    <h1 className='text-[#1B98F5]'><TbChefHat></TbChefHat></h1>
+                    <h1 className='text-[#1B98F5]'>Spicy</h1>
                 </div>
                 <div className="flex-none">
                     <div className="menu menu-horizontal px-1 text-xl gap-10 items-center text-orange-400">
