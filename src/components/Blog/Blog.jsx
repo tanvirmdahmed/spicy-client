@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { useReactToPrint } from 'react-to-print';
+
 
 const Blog = () => {
+    const componentRef = useRef();
+   
+    const handlePrint = useReactToPrint({
+        content: () => componentRef.current,
+    });
+    
+    const handleClick = () => {
+        handlePrint();
+    }
+
     return (
         <div className='w-full mb-2'>
-            <div className='bg-[#f9f9ff] flex items-center justify-center mb-6'>
+            <div className='bg-[#f9f9ff] flex flex-col items-center justify-center mb-6'>
                 <h1 className='text-4xl font-bold my-10'>Interview Questions Answers</h1>
+                <button onClick={handleClick} className='btn btn-outline'>Download PDF</button>
             </div>
-            <div>
+            <div ref={componentRef}>
                 <div className='bg-cyan-100 rounded-lg p-8 my-4'>
                     <p className='text-2xl font-bold mb-4'>Q1. Tell us the differences between uncontrolled and controlled components?</p>
                     <p className='text-lg font-light text-justify mb-2'><strong className='font-bold'>Ans:</strong> Controlled components are the ones that are managed and executed by the system, while uncontrolled components are managed and executed by an external entity or user. Controlled components are internal to the system and their behavior can be predicted and controlled by the system, while uncontrolled components are external to the system and their behavior cannot be predicted or controlled by the system.</p>

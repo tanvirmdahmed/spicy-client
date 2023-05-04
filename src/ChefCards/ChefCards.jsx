@@ -7,7 +7,7 @@ const ChefCards = () => {
 
     useEffect(() => {
         setDataLoading(true);
-        fetch('http://localhost:5000')
+        fetch('https://b7a10-chef-recipe-hunter-server-developertanvirahmed09-gmailcom.vercel.app')
             .then(res => res.json())
             .then(data => setAllChefData(data))
         setDataLoading(false);

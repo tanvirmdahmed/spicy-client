@@ -12,9 +12,9 @@ const Footer = () => {
             </div>
             <div>
                 <div className="grid grid-flow-col gap-4">
-                    <a><FaTwitter className='text-2xl text-[#1c93e4]'></FaTwitter></a>
-                    <a><FaYoutube className='text-2xl text-[#f10002]'></FaYoutube></a>
-                    <a><FaFacebook className='text-2xl text-[#1771e6]'></FaFacebook></a>   
+                    <a href='https://twitter.com/'><FaTwitter className='text-2xl text-[#1c93e4]'></FaTwitter></a>
+                    <a href='https://www.youtube.com/'><FaYoutube className='text-2xl text-[#f10002]'></FaYoutube></a>
+                    <a href='https://www.facebook.com/'><FaFacebook className='text-2xl text-[#1771e6]'></FaFacebook></a>   
                 </div>
             </div>
             <div>

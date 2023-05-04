@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Error404 = () => {
     return (
-        <div className='text-center h-screen flex flex-col items-center justify-center'>
-            <h1 className='text-[300px] font-bold italic text-red-700'>404</h1>
-            <h1 className='text-[70px] font-light'>Page Not Found</h1>
+        <div className='w-full'>
+            <img className='w-full' src="https://i.ibb.co/GCX7WmK/7aqcppklh6bexoa70320.jpg" alt="" />
+            <div className='text-center'>
+                <Link to='/' className='btn btn-outline'>Go to Home</Link>
+            </div>
         </div>
     );
 };
