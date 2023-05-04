@@ -32,6 +32,7 @@ const ChefDetails = () => {
                 <div className='grid grid-cols-3 gap-5'>
                     {
                         recipes.map(recipe => <Recipe
+                            key={recipe.id}
                             recipe={recipe}
                         ></Recipe>)
                     }

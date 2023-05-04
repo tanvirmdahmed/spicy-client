@@ -18,7 +18,7 @@ const Footer = () => {
                 </div>
             </div>
             <div>
-                <p className='text-lg'>Copyright © 2023 - All right reserved by Chef Master Ltd</p>
+                <p className='text-lg'>Copyright © 2023 - All right reserved by Spicy Ltd</p>
             </div>
         </footer>
     );

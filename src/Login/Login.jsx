@@ -19,18 +19,15 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
 
         signIn(email, password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 setSuccess("You have successfully logged in")
                 form.reset();
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error);
                 setError(error.message)
             })
     }
@@ -51,7 +48,6 @@ const Login = () => {
         githubSignIn()
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
                 navigate(from, { replace: true });
             })
             .catch(error => {

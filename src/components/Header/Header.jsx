@@ -30,19 +30,17 @@ const Header = () => {
                             user &&
                             <div className="avatar">
                                 <div className="w-10 rounded-full">
-                                    <img src={user.photoURL} />
+                                    <img title={user.displayName} className='tool' src={user.photoURL} />
                                 </div>
                             </div>
                         }
                         {
                             user ? <Link onClick={handleLogOut} className="btn btn-secondary">Logout</Link> : <Link to='/login' className="btn btn-warning">Login</Link>
                         }
+
                     </div>
                 </div>
             </div>
-            {
-                user && <h1 className='text-center'><span className='text-blue-500'>Welcome</span> <span className='text-amber-500'>{user.displayName}</span></h1>
-            }
         </div>
     );
 };
