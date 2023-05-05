@@ -8,6 +8,7 @@ const Register = () => {
     const [success, setSuccess] = useState('');
     const [error, setError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [showConfirm, setShowConfirm] = useState(false);
 
     const { createUser, profileUpdate, googleSignIn, githubSignIn, loading } = useContext(AuthContext);
     const navigate = useNavigate();
@@ -15,6 +16,10 @@ const Register = () => {
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword);
+    };
+
+    const toggleShowConfirm = () => {
+        setShowConfirm(!showConfirm);
     };
 
     const handleRegister = event => {
@@ -125,10 +130,10 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Confirm Password</span>
                                 </label>
-                                <input type={showPassword ? 'text' : 'password'} name='confirm' placeholder="Confirm Password" className="input input-bordered mb-2" required />
-                                <div className="toggle-password" onClick={toggleShowPassword}>
+                                <input type={showConfirm ? 'text' : 'password'} name='confirm' placeholder="Confirm Password" className="input input-bordered mb-2" required />
+                                <div className="toggle-password" onClick={toggleShowConfirm}>
                                     {
-                                        showPassword ? <span className='ms-1 text-xs text-black'><input onClick={toggleShowPassword} type="checkbox" name="" id="" /> Hide Password</span> : <span className='ms-1 text-xs text-black'><input onClick={toggleShowPassword} type="checkbox" /> Show Password</span>
+                                        showConfirm ? <span className='ms-1 text-xs text-black'><input onClick={toggleShowConfirm} type="checkbox" name="" id="" /> Hide Password</span> : <span className='ms-1 text-xs text-black'><input onClick={toggleShowConfirm} type="checkbox" /> Show Password</span>
                                     }
                                 </div>
                                 <label className="label">
