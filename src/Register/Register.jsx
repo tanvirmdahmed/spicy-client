@@ -90,8 +90,8 @@ const Register = () => {
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className='px-8 mt-8'>
-                            <button onClick={handleGoogleSignIn} className="btn btn-outline w-full mb-4 gap-2"><FaGoogle></FaGoogle>Register with Google</button>
-                            <button onClick={handleGithubSignIn} className="btn btn-outline btn-secondary w-full mb-8 gap-2"><FaGithub></FaGithub> Register with GitHub</button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-secondary w-full mb-4 gap-2"><FaGoogle></FaGoogle>Register with Google</button>
+                            <button onClick={handleGithubSignIn} className="btn btn-outline w-full mb-8 gap-2"><FaGithub></FaGithub> Register with GitHub</button>
                         </div>
                     </div>
                     <h2 className='text-center text-2xl font-semibold'>---------- or ----------</h2>
@@ -99,7 +99,7 @@ const Register = () => {
                         <form onSubmit={handleRegister} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Name</span>
+                                    <span className="label-text">Name*</span>
                                 </label>
                                 <input type="text" name='name' placeholder="Your Name" className="input input-bordered" required />
                             </div>
@@ -107,17 +107,17 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="url" name='url' placeholder="Photo URL" className="input input-bordered" required />
+                                <input type="url" name='url' placeholder="Photo URL" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text">Email*</span>
                                 </label>
                                 <input type="email" name='email' placeholder="Email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text">Password*</span>
                                 </label>
                                 <input type={showPassword ? 'text' : 'password'} name='password' placeholder="Password" className="input input-bordered mb-2" required />
                                 <div className="toggle-password" onClick={toggleShowPassword}>

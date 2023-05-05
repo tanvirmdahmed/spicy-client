@@ -72,8 +72,8 @@ const Login = () => {
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className='px-8 mt-8'>
-                            <button onClick={handleGoogleSignIn} className="btn btn-outline w-full mb-4 gap-2"><FaGoogle></FaGoogle>Login with Google</button>
-                            <button onClick={handleGithubSignIn} className="btn btn-outline btn-secondary w-full mb-8 gap-2"><FaGithub></FaGithub> Login with GitHub</button>
+                            <button onClick={handleGoogleSignIn} className="btn btn-outline btn-secondary w-full mb-4 gap-2"><FaGoogle></FaGoogle>Login with Google</button>
+                            <button onClick={handleGithubSignIn} className="btn btn-outline w-full mb-8 gap-2"><FaGithub></FaGithub> Login with GitHub</button>
                         </div>
                     </div>
                     <h2 className='text-center text-2xl font-semibold'>---------- or ----------</h2>

@@ -1,23 +1,24 @@
 import React, { useContext, useEffect, useState } from 'react';
 import ChefCard from '../ChefCard/ChefCard';
+import { AuthContext } from '../providers/AuthProvider';
 
 const ChefCards = () => {
     const [chefAllData, setAllChefData] = useState([]);
-    const [dataLoading, setDataLoading] = useState(true);
+    const {loading, setLoading} = useContext(AuthContext);
 
     useEffect(() => {
-        setDataLoading(true);
+        setLoading(true);
         fetch('https://b7a10-chef-recipe-hunter-server-developertanvirahmed09-gmailcom.vercel.app')
             .then(res => res.json())
             .then(data => setAllChefData(data))
-        setDataLoading(false);
+        setLoading(false);
 
     }, [])
 
     return (
         <div className='my-16'>
             {
-                dataLoading &&
+                loading &&
                 <div className="text-center">
                     <div role="status">
                         <svg aria-hidden="true" className="inline w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-amber-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -28,7 +29,7 @@ const ChefCards = () => {
                     </div>
                 </div>
             }
-            <h1 className='sm:text-lg md:lg:text-5xl text-center text-red-400 mb-12'>Here Are Our Experienced Chef</h1>
+            <h1 className='sm:text-lg md:lg:text-5xl text-center text-red-400 mb-12'>Our Experienced Chef</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-8 mx-auto'>
                 {
                     chefAllData.map(chefData => <ChefCard
