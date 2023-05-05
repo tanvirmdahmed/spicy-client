@@ -105,9 +105,9 @@ const Register = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Photo URL</span>
+                                    <span className="label-text">Photo URL*</span>
                                 </label>
-                                <input type="url" name='url' placeholder="Photo URL" className="input input-bordered" />
+                                <input type="url" name='url' placeholder="Photo URL" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -128,7 +128,7 @@ const Register = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Confirm Password</span>
+                                    <span className="label-text">Confirm Password*</span>
                                 </label>
                                 <input type={showConfirm ? 'text' : 'password'} name='confirm' placeholder="Confirm Password" className="input input-bordered mb-2" required />
                                 <div className="toggle-password" onClick={toggleShowConfirm}>

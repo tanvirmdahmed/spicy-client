@@ -1,23 +1,15 @@
-import React, { useRef } from 'react';
-import { useReactToPrint } from 'react-to-print';
+import React from 'react';
 import useTitle from '../../hooks/useTitle';
+import ReactToPdf from '../../react-to-pdf';
 
 
 const Blog = () => {
-    const componentRef = useRef();
+    const ref = React.createRef();
     useTitle('Blog');
-
-    const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
-    });
-
-    const handleClick = () => {
-        handlePrint();
-    }
 
     return (
         <div className='w-full mb-2 px-3 md:lg:px-0'>
-            <div ref={componentRef}>
+            <div ref={ref}>
                 <div className='bg-[#f9f9ff] mb-6'>
                     <h1 className='text-xl md:lg:text-4xl text-center font-bold my-10'>Interview Questions Answers</h1>
                 </div>
@@ -41,7 +33,11 @@ const Blog = () => {
                 </div>
             </div>
             <div className='text-center'>
-                <button onClick={handleClick} className='btn btn-outline'>Download PDF</button>
+                <ReactToPdf targetRef={ref} filename="Blog-Spicy.pdf">
+                    {({ toPdf }) => (
+                        <button className='btn btn-outline' onClick={toPdf}>Generate pdf</button>
+                    )}
+                </ReactToPdf>
             </div>
         </div>
     );
