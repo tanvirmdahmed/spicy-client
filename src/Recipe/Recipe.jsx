@@ -25,7 +25,7 @@ const Recipe = ({ recipe }) => {
                         ingredients.map(ingredient => <li className='list-decimal text-lg text-slate-600 ms-4 capitalize'>{ingredient}</li>)
                     }
                 </ol>
-                <p className='text-slate-600'>{cookingMethod}</p>
+                <p className='text-slate-600 text-justify'>{cookingMethod}</p>
                 <div className='flex gap-2 items-center'>
                     <Rating className='text-gray-500 text-xl' placeholderRating={rating}
                         emptySymbol={<FaRegStar></FaRegStar>}

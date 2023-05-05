@@ -1,15 +1,17 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Recipe from '../Recipe/Recipe';
+import useTitle from '../hooks/useTitle';
 
 const ChefDetails = () => {
     const eachChefData = useLoaderData();
     const { id, chefPicture, chefName, bio, yearsExperience, numRecipes, likes, recipes } = eachChefData;
+    useTitle('Chef Recipes');
     return (
-        <div>
-            <div className='bg-image flex flex-col-reverse md:lg:flex-row items-center justify-center my-8 bg-purple-100 px-8 py-8 rounded-lg'>
+        <div className='px-3 md:lg:px-0'>
+            <div className='bg-image flex flex-col-reverse md:lg:flex-row gap-6 items-center justify-center my-8 bg-purple-100 px-8 py-8 rounded-lg'>
                 <div className='w-full'>
-                    <div className='mb-4 md:lg:mb-12 text-center'>
+                    <div className='mb-4 md:lg:mb-12 text-center md:lg:text-left'>
                         <p className='text-zinc-600 font-bold text-3xl md:text-5xl lg:text-6xl drop-shadow-xl mb-3'>{chefName}</p>
                         <div className='text-gray-500 text-lg md:lg:text-2xl font-semibold '>
                             <p className=''>Years of Experiences: {yearsExperience} years</p>

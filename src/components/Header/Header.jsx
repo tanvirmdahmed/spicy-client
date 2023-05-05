@@ -16,7 +16,7 @@ const Header = () => {
     }
 
     return (
-        <div>
+        <div className='px-3 md:lg:px-0'>
             <div className="navbar flex-col md:lg:flex-row bg-image py-4 gap-4 md:lg:gap-0">
                 <div className="flex-1 gap-2">
                     <h1 className='text-[#1B98F5]'><TbChefHat></TbChefHat></h1>
