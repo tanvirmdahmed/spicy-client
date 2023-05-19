@@ -19,7 +19,7 @@ const ChefCards = () => {
             {
                 !loader ?
                     (<div>
-                        <h1 className='sm:text-lg md:lg:text-5xl text-center text-red-400 mb-12'>Our Experienced Chef</h1>
+                        <h1 className='text-lg md:text-3xl md:lg:text-5xl text-center text-red-400 mb-12'>Our Experienced Chef</h1>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center gap-8 mx-auto'>
                             {
                                 chefAllData.map(chefData => <ChefCard

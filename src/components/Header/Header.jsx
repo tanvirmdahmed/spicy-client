@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ActiveLink from '../ActiveLink/ActiveLink';
 import { TbChefHat } from "react-icons/tb";
 import { Link } from 'react-router-dom';
@@ -10,7 +10,8 @@ import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
 
-    const { user, logOut, } = useContext(AuthContext);
+    const { user, logOut, photo } = useContext(AuthContext);
+
 
     const handleLogOut = () => {
         logOut()
@@ -20,6 +21,7 @@ const Header = () => {
 
     return (
         <div className='px-3 md:lg:px-0'>
+
             <div className="navbar flex-col md:lg:flex-row bg-image py-4 gap-4 md:lg:gap-0">
                 <div className="flex-1 gap-2">
                     <h1 className='text-[#1B98F5]'><TbChefHat></TbChefHat></h1>
@@ -33,7 +35,9 @@ const Header = () => {
                             user &&
                             <div className="avatar">
                                 <div className="w-10 border-gray-200 border-2 rounded-full">
-                                    <img title={user.displayName} className='tool' src={user?.photoURL} />
+                                    {
+                                        photo ? <img title={user.displayName} className='tool' src={photo} /> : <div className='h-full w-full flex justify-center items-center'><FaUser></FaUser></div>
+                                    }
 
                                 </div>
                             </div>

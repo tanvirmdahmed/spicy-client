@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaGithub, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
 import { AuthContext } from '../providers/AuthProvider';
 import useTitle from '../hooks/useTitle';
 
@@ -10,7 +10,7 @@ const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirm, setShowConfirm] = useState(false);
 
-    const { createUser, profileUpdate, googleSignIn, githubSignIn, loading } = useContext(AuthContext);
+    const { createUser, profileUpdate, googleSignIn, githubSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
     useTitle('Register');
 
@@ -105,9 +105,9 @@ const Register = () => {
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Photo URL*</span>
+                                    <span className="label-text">Photo URL</span>
                                 </label>
-                                <input type="url" name='url' placeholder="Photo URL" className="input input-bordered" required />
+                                <input type="url" name='url' placeholder="Photo URL" className="input input-bordered" />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -119,22 +119,18 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password*</span>
                                 </label>
-                                <input type={showPassword ? 'text' : 'password'} name='password' placeholder="Password" className="input input-bordered mb-2" required />
-                                <div className="toggle-password" onClick={toggleShowPassword}>
-                                    {
-                                        showPassword ? <span className='ms-1 text-xs text-black'><input onClick={toggleShowPassword} type="checkbox" name="" id="" /> Hide Password</span> : <span className='ms-1 text-xs text-black'><input onClick={toggleShowPassword} type="checkbox" /> Show Password</span>
-                                    }
+                                <div className='w-full h-12 relative' >
+                                    <input type={showPassword ? 'text' : 'password'} name='password' placeholder="Password" className="input input-bordered border-[#d2d4d7] w-full h-full bg-transparent" required />
+                                    {showPassword ? <FaEyeSlash className='text-sky-400 absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer' onClick={toggleShowPassword} /> : <FaEye className='text-sky-600 absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer' onClick={toggleShowPassword} />}
                                 </div>
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Confirm Password*</span>
                                 </label>
-                                <input type={showConfirm ? 'text' : 'password'} name='confirm' placeholder="Confirm Password" className="input input-bordered mb-2" required />
-                                <div className="toggle-password" onClick={toggleShowConfirm}>
-                                    {
-                                        showConfirm ? <span className='ms-1 text-xs text-black'><input onClick={toggleShowConfirm} type="checkbox" name="" id="" /> Hide Password</span> : <span className='ms-1 text-xs text-black'><input onClick={toggleShowConfirm} type="checkbox" /> Show Password</span>
-                                    }
+                                <div className='w-full h-12 relative' >
+                                    <input type={showConfirm ? 'text' : 'password'} name='confirm' placeholder="Confirm Password" className="input input-bordered border-[#d2d4d7] w-full h-full bg-transparent" required />
+                                    {showConfirm ? <FaEyeSlash className='text-sky-400 absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer' onClick={toggleShowConfirm} /> : <FaEye className='text-sky-600 absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer' onClick={toggleShowConfirm} />}
                                 </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
@@ -151,8 +147,8 @@ const Register = () => {
                         </form>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
     );
 };
 

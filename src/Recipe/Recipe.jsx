@@ -22,7 +22,7 @@ const Recipe = ({ recipe }) => {
                 <h4 className='text-xl font-bold text-slate-800'>Ingredients</h4>
                 <ol>
                     {
-                        ingredients.map(ingredient => <li className='list-decimal text-lg text-slate-600 ms-4 capitalize'>{ingredient}</li>)
+                        ingredients.map(ingredient => <li key={ingredient} className='list-decimal text-lg text-slate-600 ms-4 capitalize'>{ingredient}</li>)
                     }
                 </ol>
                 <p className='text-slate-600 text-justify'>{cookingMethod}</p>

@@ -89,11 +89,9 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type={showPassword ? 'text' : 'password'} name='password' placeholder="Password" className="input input-bordered mb-2" required />
-                                <div className="toggle-password" onClick={toggleShowPassword}>
-                                    {
-                                        showPassword ? <span className='ms-1 text-xs text-black'><input onClick={toggleShowPassword} type="checkbox" name="" id="" /> Hide Password</span> : <span className='ms-1 text-xs text-black'><input onClick={toggleShowPassword} type="checkbox" /> Show Password</span>
-                                    }
+                                <div className='w-full h-12 relative' >
+                                    <input type={showPassword ? 'text' : 'password'} name='password' placeholder="Password" className="input input-bordered border-[#d2d4d7] w-full h-full bg-transparent" required />
+                                    {showPassword ? <FaEyeSlash className='text-sky-400 absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer' onClick={toggleShowPassword} /> : <FaEye className='text-sky-600 absolute right-5 top-1/2 -translate-y-1/2 cursor-pointer' onClick={toggleShowPassword} />}
                                 </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
